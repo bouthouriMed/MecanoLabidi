@@ -20,14 +20,14 @@ export default function Layout({
   userName,
 }: {
   children: React.ReactNode;
-  userName: string;
+  userName?: string;
 }) {
   const handleLogout = async () => {
     try {
       await fetch("/api/logout", {
         method: "POST",
       });
-      window.location.href = "/login"; // redirect after logout
+      window.location.href = "/login";
     } catch (error) {
       console.error("Logout failed", error);
     }
