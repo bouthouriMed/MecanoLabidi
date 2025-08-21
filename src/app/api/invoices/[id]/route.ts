@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import { pool } from "@/lib/db"; // adjust path
 
-export async function DELETE(
-  req: Request,
-  context: { params: { id: string } }
-) {
-  const id = context.params.id; // access params inside
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function DELETE(req: Request, context: any) {
+  const id = context.params.id;
 
   try {
     const result = await pool.query("DELETE FROM invoices WHERE id = $1", [id]);
