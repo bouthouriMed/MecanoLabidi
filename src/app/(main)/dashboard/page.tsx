@@ -24,7 +24,7 @@ export default function Dashboard() {
 
   return (
     <DashboardContainer>
-      <Heading>Actualités Mécanique & Diagnostic</Heading>
+      <Heading>Actualités Mécanique & Diagnostique</Heading>
       <Grid>
         {articles.map((a, idx) => (
           <ArticleCard key={idx} {...a} />
