@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
 import { pool } from "@/lib/db";
 
-interface Params {
-  id: string;
-}
-
-export async function DELETE(req: Request, context: { params: Params }) {
+export async function DELETE(
+  req: Request,
+  context: { params: { id: string } }
+) {
   const { id } = context.params;
 
   try {
