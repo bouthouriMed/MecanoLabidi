@@ -15,8 +15,8 @@ import {
 import { useInvoices } from "./InvoicesContext";
 import InvoiceModal from "./InvoiceModal";
 import { toast } from "react-toastify";
-import CreateInvoiceModal from "../create-invoice/page";
 import { Invoice } from "./types";
+import CreateInvoiceModal from "../create-invoice/CreateInvoice";
 
 const InvoicesPage = () => {
   const { invoices, loading, removeInvoice } = useInvoices();
