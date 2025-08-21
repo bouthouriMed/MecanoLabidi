@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Print working directory
+        run: pwd
+
+      - name: List repo contents
+        run: ls -la
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
