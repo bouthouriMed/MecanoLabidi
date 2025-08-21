@@ -1,7 +1,5 @@
-// src/app/api/invoices/route.ts
 import { NextResponse } from "next/server";
 import { pool } from "@/lib/db";
-import { create } from "domain";
 
 // GET all invoices
 export async function GET() {

@@ -1,3 +1,4 @@
+import React from "react";
 import { InvoicesProvider } from "../(main)/invoices/InvoicesContext";
 
 export default function AuthLayout({

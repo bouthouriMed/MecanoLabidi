@@ -194,7 +194,7 @@ export default function AddUser() {
       >
         <UserForm onSubmit={handleSubmit}>
           <InputGroup>
-            <Label>Nom d'utilisateur</Label>
+            <Label>Nom d&apos;utilisateur</Label>
             <Input
               type="text"
               name="username"

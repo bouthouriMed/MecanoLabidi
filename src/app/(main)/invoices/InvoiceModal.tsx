@@ -15,30 +15,13 @@ import {
   TotalRow,
 } from "./InvoiceModal.styles";
 import BaseModal from "../../components/BaseModal.tsx/BaseModal";
-
-type InvoiceItem = {
-  description: string;
-  quantity: number;
-  price: number;
-};
-
-type InvoiceData = {
-  id: number;
-  customer_name: string;
-  date: string;
-  car_plate: string;
-  technician_name: string;
-  phone_number: string;
-  email: string;
-  subtotal: number;
-  items?: InvoiceItem[];
-};
+import { Invoice } from "./types";
 
 export default function InvoiceModal({
   invoice,
   onClose,
 }: {
-  invoice: InvoiceData;
+  invoice: Invoice;
   onClose: () => void;
 }) {
   if (!invoice) return null;
