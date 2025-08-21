@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Print working directory
+        run: pwd
+
+      - name: List repo contents
+        run: ls -la
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -28,5 +34,12 @@ jobs:
       - name: Run tests
         run: npm run test --if-present
 
-      - name: Build Next.js app
-        run: npm run build
+      - name: Build and upload
+        run: |
+          npm run build
+          ls -la .next
+        shell: bash
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nextjs-build
+          path: ".next"
