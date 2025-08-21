@@ -30,3 +30,9 @@ jobs:
 
       - name: Build Next.js app
         run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: nextjs-build
+          path: .next
