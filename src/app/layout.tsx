@@ -1,4 +1,4 @@
-import { ToastContainer } from "react-toastify";
+import React from "react";
 import StyledComponentsRegistry from "../../lib/StyledComponentRegistry";
 
 export default function RootLayout({

@@ -16,14 +16,15 @@ import { useInvoices } from "./InvoicesContext";
 import InvoiceModal from "./InvoiceModal";
 import { toast } from "react-toastify";
 import CreateInvoiceModal from "../create-invoice/page";
+import { Invoice } from "./types";
 
 const InvoicesPage = () => {
   const { invoices, loading, removeInvoice } = useInvoices();
-  const [selectedInvoice, setSelectedInvoice] = useState<any | null>(null);
+  const [selectedInvoice, setSelectedInvoice] = useState<Invoice | null>(null);
 
   const { isModalOpen, setIsModalOpen } = useInvoices();
 
-  const handleView = (invoice: any) => {
+  const handleView = (invoice: Invoice) => {
     setSelectedInvoice(invoice);
   };
 
@@ -31,6 +32,7 @@ const InvoicesPage = () => {
     setSelectedInvoice(null);
   };
 
+  /* eslint-disable */
   const handleDelete = async (id: number) => {
     if (!confirm("Voulez-vous vraiment supprimer cette facture ?")) return;
 

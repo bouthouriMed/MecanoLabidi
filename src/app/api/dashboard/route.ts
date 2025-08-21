@@ -1,6 +1,17 @@
 // pages/api/news.ts
 import { NextResponse } from "next/server";
 
+type Article = {
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string;
+  source: {
+    name: string;
+  };
+  publishedAt: string;
+};
+
 export async function GET() {
   try {
     const apiKey = process.env.NEWS_API_KEY; // Store your key in .env.local
@@ -14,7 +25,7 @@ export async function GET() {
     const data = await res.json();
 
     // Optionally map only required fields for the frontend
-    const articles = data.articles.map((article: any) => ({
+    const articles = data.articles.map((article: Article) => ({
       title: article.title,
       description: article.description,
       url: article.url,
