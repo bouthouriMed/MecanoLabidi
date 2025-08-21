@@ -37,6 +37,9 @@ jobs:
       - name: Build Next.js app
         run: npm run build
 
+      - name: List .next folder
+        run: ls -la .next
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
