@@ -62,7 +62,7 @@ const CreateInvoiceModal: React.FC<InvoiceModalProps> = ({
         const data = await res.json();
         setDiagnosisOptions(data || []);
       } catch (error) {
-        console.error("Error fetching diagnosis:", error);
+        console.error("Error while fetching diagnosis:", error);
       }
     };
     fetchDiagnosis();
