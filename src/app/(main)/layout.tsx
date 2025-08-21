@@ -15,13 +15,7 @@ import Link from "next/link";
 import { InvoicesProvider } from "./invoices/InvoicesContext";
 import { ToastContainer } from "react-toastify";
 
-export default function Layout({
-  children,
-  userName,
-}: {
-  children: React.ReactNode;
-  userName?: string;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const handleLogout = async () => {
     try {
       await fetch("/api/logout", {
@@ -69,9 +63,7 @@ export default function Layout({
           </Sidebar>
 
           <MainContent>
-            <Navbar>
-              <div>{userName}</div>
-            </Navbar>
+            <Navbar>{/* <div>{userName}</div> */}</Navbar>
             <section style={{ padding: "20px" }}>{children}</section>
           </MainContent>
           <ToastContainer position="top-center" autoClose={3000} />
