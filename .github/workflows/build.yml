@@ -34,14 +34,12 @@ jobs:
       - name: Run tests
         run: npm run test --if-present
 
-      - name: Build Next.js app
-        run: npm run build
-
-      - name: List .next folder
-        run: ls -la .next
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+      - name: Build and upload
+        run: |
+          npm run build
+          ls -la .next
+        shell: bash
+      - uses: actions/upload-artifact@v4
         with:
           name: nextjs-build
-          path: .next
+          path: ".next"
